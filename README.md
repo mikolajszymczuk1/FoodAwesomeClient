@@ -1,5 +1,52 @@
 # Food Awesome Client
 
+Food Awesome is a simple recipe app where you can store/create/share your recipes. <br>
+``` !!! This project is a client app only and need working backend that serve api for client !!! ```
+
+## 🚀 Project setup
+
+---
+
+Install all project packages:
+
+```
+npm install
+```
+
+Run dev server:
+
+```
+npm run watch
+```
+
+Run tests:
+
+Unit
+```
+```
+
+E2E
+```
+```
+
+To build project
+
+```
+npm run build
+```
+
+or
+
+```
+npm run build:dev
+```
+
+or
+
+```
+npm run build:prod
+```
+
 ## Preferred api for client (FoodAwesomeClient API v1)
 
 | Method | Endpoint | Parameters | Data | Description |
