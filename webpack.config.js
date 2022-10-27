@@ -36,7 +36,18 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler, "css-loader", "postcss-loader", "sass-loader"],
+        use: [
+          stylesHandler,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+            }
+          }
+        ],
       },
       {
         test: /\.css$/i,
@@ -53,6 +64,9 @@ const config = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
 };
 
