@@ -4,8 +4,10 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
+    "baseUrl": "src",
     "allowJs": true,
     "moduleResolution": "node",
   },
-  "files": ["src/main.ts"]
+  "files": ["src/main.ts"],
+  "exclude": ["node_modules"]
 }
