@@ -1,0 +1,28 @@
+@use '@/scss/utils/variables';
+
+.navigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 31px;
+
+  &__logo {
+    width: 82px;
+    height: auto;
+  }
+
+  &__buttonsWrapper {
+    display: flex;
+
+    margin-left: 20px;
+  }
+
+  &__menu {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__menuImage { }
+}

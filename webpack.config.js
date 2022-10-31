@@ -36,6 +36,7 @@ const config = {
     new CopyPlugin({
       patterns: [
         { from: './src/templates', to: 'templates' },
+        { from: './src/assets', to: 'assets' },
       ],
     }),
 

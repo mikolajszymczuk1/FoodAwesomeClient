@@ -1,0 +1,67 @@
+@use '@/scss/utils/variables' as *;
+
+.iconTextButton {
+  $self: &;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40.5px;
+  height: 40.5px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  &:first-child {
+    margin-right: 5px;
+  }
+
+  &--blue {
+    background-color: $darkBlue;
+  }
+
+  &--orange {
+    background-color: $orange;
+  }
+
+  &--full {
+    padding: 10px 15px;
+
+    width: auto;
+    height: auto;
+
+    #{ $self } {
+      &__icon {
+        margin-right: 10px;
+      }
+
+      &__text {
+        display: block;
+      }
+    }
+  }
+
+  &__icon {
+    height: auto;
+
+    fill: $white;
+
+    &--randomRecipe {
+      width: 23px;
+    }
+
+    &--explore {
+      width: 19px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    font-family: $rubik;
+    font-weight: bold;
+    color: $white;
+    font-size: 0.75rem;
+  }
+}

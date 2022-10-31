@@ -1,5 +1,6 @@
 // Base styles
 @use './utils/base';
 
-// Example component
-@use './components/hello';
+// Components
+@use './components/navigationBar';
+@use './components/iconTextButton';
