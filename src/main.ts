@@ -3,15 +3,21 @@ import '@/scss/main.scss';
 import Router from '@/modules/Router/Router.ts';
 // @ts-ignore
 import Page from '@/modules/Page/Page.ts';
+// @ts-ignore
+import Navigation from '@/modules/Navigation/Navigation.ts';
 
 // Get root app element
 const app = document.querySelector('#app') as HTMLElement;
 
-// Router;
+// Router
 let router: Router;
 
 // Pages
 let mainPage: Page;
+
+const hello = () => {
+  Navigation.hello();
+};
 
 // Create pages objects
 const loadAllPages = async () => {
