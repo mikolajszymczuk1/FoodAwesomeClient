@@ -20,6 +20,12 @@ export default class Navigation {
     this.navigationElement = document.querySelector(navigationElementSelector) as HTMLElement;
     this.activateButton = document.querySelector(activateButtonSelector) as HTMLButtonElement;
     this.deactivateButton = document.querySelector(deactivateButtonSelector) as HTMLButtonElement;
+    this.init();
+  }
+
+  init(): void {
+    this.activateButton.addEventListener('click', () => this.activateMenu());
+    this.deactivateButton.addEventListener('click', () => this.deactivateMenu());
   }
 
   get fullActivateClassName(): string {

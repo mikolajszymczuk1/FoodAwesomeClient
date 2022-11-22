@@ -31,8 +31,6 @@ const init = async () => {
 
   // Init Navigation
   const navigation = new Navigation('.navigationBar', '#activateButton', '#deactivateButton', '--active');
-  document.querySelector('#activateButton').addEventListener('click', () => navigation.activateMenu());
-  document.querySelector('#deactivateButton').addEventListener('click', () => navigation.deactivateMenu());
 };
 
 init();
