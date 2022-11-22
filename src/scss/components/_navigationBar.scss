@@ -1,6 +1,7 @@
 @use '@/scss/utils/variables' as *;
 
 .navigationBar {
+  $self: &;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,6 +42,10 @@
     background-color: $white;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba($darkBlue, 0.1);
+
+    #{ $self }--active & {
+      display: block;
+    }
   }
 
   &__menuTopBar {

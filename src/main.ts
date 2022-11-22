@@ -15,10 +15,6 @@ let router: Router;
 // Pages
 let mainPage: Page;
 
-const hello = () => {
-  Navigation.hello();
-};
-
 // Create pages objects
 const loadAllPages = async () => {
   mainPage = new Page('mainPage', await Page.loadSinglePage('templates/mainPage.mustache.html'));
@@ -32,6 +28,11 @@ const init = async () => {
   ], app);
 
   router.setPage('/');
+
+  // Init Navigation
+  const navigation = new Navigation('.navigationBar', '#activateButton', '#deactivateButton', '--active');
+  document.querySelector('#activateButton').addEventListener('click', () => navigation.activateMenu());
+  document.querySelector('#deactivateButton').addEventListener('click', () => navigation.deactivateMenu());
 };
 
 init();
