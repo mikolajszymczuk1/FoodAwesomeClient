@@ -1,0 +1,11 @@
+@use '@/scss/utils/variables' as *;
+
+// Extra classes to use
+
+.highlightText {
+  color: $orange;
+
+  &--italic {
+    font-style: italic;
+  }
+}

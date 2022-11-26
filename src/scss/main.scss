@@ -1,6 +1,9 @@
 // Base styles
 @use './utils/base';
 
+// Extra classes
+@use './utils/extraStyles';
+
 // === Components ===
 @use './components/navigationBar';
 @use './components/iconTextButton';
