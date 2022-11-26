@@ -1,0 +1,7 @@
+// Setup background image with basic configuration
+@mixin bgImage($imageUrl) {
+  background-image: url($imageUrl);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

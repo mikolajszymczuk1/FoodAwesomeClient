@@ -1,6 +1,11 @@
 // Base styles
 @use './utils/base';
 
-// Components
+// === Components ===
 @use './components/navigationBar';
 @use './components/iconTextButton';
+
+// === Pages ===
+
+// Main page
+@use './pages/mainPage/heroSection';
