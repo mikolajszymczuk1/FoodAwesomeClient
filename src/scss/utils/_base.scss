@@ -1,3 +1,5 @@
+@use '@/scss/utils/breakpoints' as *;
+
 // Base styles for project
 
 *,
@@ -11,4 +13,8 @@
 
 body {
   padding: 10px;
+
+  @media screen and (min-width: $xlg) {
+    padding: 28px;
+  }
 }
