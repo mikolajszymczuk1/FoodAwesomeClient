@@ -1,4 +1,5 @@
 @use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
 @use '@/scss/mixins/backgroundMixins' as *;
 
 .heroSection {
@@ -7,7 +8,7 @@
   align-items: center;
   position: relative;
 
-  margin-top:10px;
+  margin-top: 10px;
 
   width: 100%;
   height: 415px;
@@ -15,6 +16,16 @@
   border-radius: 12px;
   background-color: transparent;
   @include bgImage('@/assets/images/heroBackgroundMobile.svg');
+
+  @media screen and (min-width: $smm) {
+    height: 550px;
+  }
+
+  @media screen and (min-width: $lg) {
+    height: 36vw;
+
+    @include bgImage('@/assets/images/heroBackgroundDesktop.svg');
+  }
 
   &__mainTitle,
   &__subTitle {
@@ -27,12 +38,40 @@
     margin-top: 30%;
 
     font-size: 2.188rem;
+
+    @media screen and (min-width: $md) {
+      margin-top: 20%;
+    }
+
+    @media screen and (min-width: $sm) {
+      font-size: 2.6rem;
+    }
+
+    @media screen and (min-width: $lg) {
+      margin-top: 7%;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      margin-top: 6%;
+
+      font-size: 3.75rem;
+    }
   }
 
   &__subTitle {
     margin-bottom: 26px;
 
     font-size: 1.25rem;
+
+    @media screen and (min-width: $sm) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      margin-bottom: 37px;
+
+      font-size: 2.813rem;
+    }
   }
 
   &__heroButton,
@@ -52,6 +91,16 @@
     font-family: $rubik;
     font-size: 0.938rem;
     font-weight: 500;
+
+    @media screen and (min-width: $sm) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      padding: 15px 50px;
+
+      font-size: 1.125rem;
+    }
   }
 
   &__recOfTheDayButton {
@@ -69,6 +118,15 @@
 
     font-family: $barlow;
     font-size: 0.75rem;
+
+    @media screen and (min-width: $sm) {
+      font-size: 0.9rem;
+    }
+
+    @media screen and (min-width: $lg) {
+      top: 30px;
+      right: 30px;
+    }
   }
 
   &__recButtonIcon {
@@ -88,5 +146,87 @@
     width: 80%;
 
     transform: translateX(-50%);
+
+    @media screen and (min-width: $sm) {
+      bottom: -50px;
+    }
+
+    @media screen and (min-width: $md) {
+      width: 65%;
+    }
+
+    @media screen and (min-width: $lg) {
+      bottom: -20px;
+
+      width: 38%;
+    }
+  }
+
+  &__flyingBox {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 36px rgba($darkBlue, 0.1);
+
+    @media screen and (min-width: $lg) {
+      display: flex;
+    }
+
+    @media screen and (min-width: $xlg) {
+      width: 55px;
+      height: 55px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      width: 65px;
+      height: 65px;
+
+      border-radius: 15px;
+    }
+
+    &--blue {
+      fill: $darkBlue;
+    }
+
+    &--orange {
+      fill: $orange;
+    }
+
+    &:nth-child(1) {
+      top: 10%;
+      left: 26%;
+    }
+
+    &:nth-child(2) {
+      top: 35%;
+      left: 16%;
+    }
+
+    &:nth-child(3) {
+      top: 60%;
+      left: 24%;
+    }
+
+    &:nth-child(4) {
+      top: 25%;
+      right: 17%;
+    }
+
+    &:nth-child(5) {
+      top: 54%;
+      right: 24%;
+    }
+  }
+
+  &__flyingIcon {
+    width: 50%;
+    height: 50%;
   }
 }
