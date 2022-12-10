@@ -27,6 +27,10 @@
     @include bgImage('@/assets/images/heroBackgroundDesktop.svg');
   }
 
+  @media screen and (min-width: $xlg) {
+    margin-top: 28px;
+  }
+
   &__mainTitle,
   &__subTitle {
     font-family: $barlow;
@@ -127,6 +131,14 @@
       top: 30px;
       right: 30px;
     }
+
+    @media screen and (min-width: $superLarge) {
+      padding: 14px 24px;
+
+      border-radius: 15px;
+
+      font-size: 1rem;
+    }
   }
 
   &__recButtonIcon {
@@ -136,6 +148,12 @@
     height: 17px;
 
     fill: $darkBlue;
+
+    @media screen and (min-width: $xlg) {
+      height: 26px;
+
+      margin-right: 14px;
+    }
   }
 
   &__decorationIllustration {
