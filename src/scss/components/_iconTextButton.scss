@@ -1,4 +1,34 @@
+@use '@/scss/utils/breakpoints' as *;
 @use '@/scss/utils/variables' as *;
+
+// ========= Helpers mixins =========
+
+@mixin toFull($self) {
+  padding: 10px 15px;
+
+  width: auto;
+  height: auto;
+
+  @media screen and (min-width: $xlg) {
+    padding: 12px 25px;
+  }
+
+  #{ $self } {
+    &__icon {
+      margin-right: 10px;
+
+      @media screen and (min-width: $xlg) {
+        margin-right: 14px;
+      }
+    }
+
+    &__text {
+      display: block;
+    }
+  }
+}
+
+// ==================================
 
 .iconTextButton {
   $self: &;
@@ -13,8 +43,16 @@
 
   text-decoration: none;
 
+  @media screen and (min-width: $md) {
+    @include toFull($self);
+  }
+
   &:first-child {
     margin-right: 5px;
+
+    @media screen and (min-width: $xlg) {
+      margin-right: 23px;
+    }
   }
 
   &--blue {
@@ -26,19 +64,10 @@
   }
 
   &--full {
-    padding: 10px 15px;
+    @include toFull($self);
 
-    width: auto;
-    height: auto;
-
-    #{ $self } {
-      &__icon {
-        margin-right: 10px;
-      }
-
-      &__text {
-        display: block;
-      }
+    @media screen and (min-width: $lg) {
+      display: none;
     }
   }
 
@@ -49,10 +78,18 @@
 
     &--randomRecipe {
       width: 23px;
+
+      @media screen and (min-width: $xlg) {
+        width: 32px;
+      }
     }
 
     &--explore {
       width: 19px;
+
+      @media screen and (min-width: $xlg) {
+        width: 28px;
+      }
     }
   }
 
@@ -63,5 +100,9 @@
     font-weight: bold;
     color: $white;
     font-size: 0.75rem;
+
+    @media screen and (min-width: $xlg) {
+      font-size: 0.938rem;
+    }
   }
 }
