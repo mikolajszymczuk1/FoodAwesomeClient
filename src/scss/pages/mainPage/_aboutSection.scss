@@ -7,16 +7,51 @@
   color: $darkBlue;
   text-align: center;
 
+  @media screen and (min-width: $sm) {
+    margin: 199px auto 0 auto;
+
+    width: 70%;
+  }
+
+  @media screen and (min-width: $lg) {
+    width: 500px;
+
+    text-align: left;
+  }
+
+  @media screen and (min-width: $xlg) {
+    transform: translateX(-25%);
+  }
+
+  @media screen and (min-width: $superLarge) {
+    margin-top: 336px;
+
+    width: 650px;
+
+    transform: translateX(-30%);
+  }
+
   &__title {
     margin-bottom: 25px;
 
     font-family: $barlow;
     font-size: 1.563rem;
+
+    @media screen and (min-width: $superLarge) {
+      margin-bottom: 20px;
+
+      font-size: 3.125rem;
+    }
   }
 
   &__content {
     font-family: $rubik;
     font-size: 1.25rem;
     line-height: 35px;
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 1.563rem;
+      line-height: 45px;
+    }
   }
 }
