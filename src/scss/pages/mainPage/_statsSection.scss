@@ -1,0 +1,111 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.statsSection {
+  position: relative;
+
+  margin-top: 376px;
+  padding: 93px 35px;
+
+  background-color: $darkBlue;
+  border-radius: 12px;
+
+  text-align: center;
+
+  @media screen and (min-width: $superLarge) {
+    padding: 134px 0;
+
+    border-radius: 15px;
+  }
+
+  &__decorationImage {
+    position: absolute;
+    bottom: calc(100% - 10px);
+    right: 31px;
+
+    @media screen and (min-width: $md) {
+      right: 15%;
+
+      width: 250px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      bottom: calc(100% - 30px);
+      right: 17%;
+
+      width: 406px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 96px;
+
+    font-family: $barlow;
+    font-size: 1.563rem;
+    color: $white;
+
+    @media screen and (min-width: $superLarge) {
+      margin-bottom: 81px;
+
+      font-size: 3.125rem;
+    }
+  }
+
+  &__wrapper {
+    @media screen and (min-width: $md) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      justify-content: center;
+    }
+  }
+
+  &__singleStat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: $rubik;
+    font-weight: bold;
+  }
+
+  &__statNumber {
+    margin-bottom: 20px;
+
+    color: $orange;
+    font-size: 3.125rem;
+    font-weight: 700;
+
+    @media screen and (min-width: $superLarge) {
+      margin-bottom: 22px;
+
+      font-size: 4.375rem;
+    }
+  }
+
+  &__statDescription {
+    font-size: 1.563rem;
+    color: $white;
+    font-weight: 500;
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 1.875rem;
+    }
+  }
+
+  &__separatorImage {
+    margin: 65px 0;
+
+    @media screen and (min-width: $md) {
+      margin: 0;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      margin: 0 160px;
+
+      width: 192px;
+    }
+  }
+}
