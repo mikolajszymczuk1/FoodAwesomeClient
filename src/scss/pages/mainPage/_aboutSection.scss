@@ -1,0 +1,22 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.aboutSection {
+  margin-top: 199px;
+
+  color: $darkBlue;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-family: $barlow;
+    font-size: 1.563rem;
+  }
+
+  &__content {
+    font-family: $rubik;
+    font-size: 1.25rem;
+    line-height: 35px;
+  }
+}
