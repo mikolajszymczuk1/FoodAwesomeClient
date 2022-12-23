@@ -1,0 +1,182 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+@use '@/scss/mixins/backgroundMixins' as *;
+
+.footerSection {
+  &__topPart {
+    position: relative;
+
+    padding: 81px 23px 0 23px;
+
+    height: 525px;
+
+    background-color: $darkBlue;
+    border-radius: 12px;
+    @include bgImage('@/assets/images/footerImageBurgerMobile.png');
+    overflow: hidden;
+
+    @media screen and (min-width: $md) {
+      height: 360px;
+
+      @include bgImage('@/assets/images/footerImageBurgerDesktop.png');
+
+      text-align: center;
+    }
+
+    @media screen and (min-width: $xlg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      padding: 0;
+
+      height: 620px;
+
+      background-size: auto 100%;
+      background-position: right;
+      border-radius: 15px;
+    }
+
+    &::before {
+      content: "";
+      @include overlay($darkBlue);
+      background: linear-gradient(90deg, rgba($darkBlue, 1) 50%, rgba($darkBlue, 0) 200%);
+
+      @media screen and (min-width: $xlg) {
+        background: linear-gradient(90deg, rgba($darkBlue, 1) 65%, rgba($darkBlue, 0) 200%);
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    margin-bottom: 39px;
+
+    color: $white;
+    font-family: $barlow;
+    font-weight: 700;
+    font-size: 2.188rem;
+
+    @media screen and (min-width: $xlg) {
+      margin-bottom: 56px;
+
+      font-size: 3.75rem;
+    }
+  }
+
+  &__linksWrapper {
+    position: relative;
+
+    @media screen and (min-width: $md) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__navLink {
+    display: block;
+
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    color: $white;
+    font-family: $rubik;
+    font-weight: 500;
+    font-size: 1.125rem;
+
+    @media screen and (min-width: $md) {
+      margin-bottom: 0;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: $xlg) {
+      margin-right: 63px;
+
+      font-size: 1.563rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__socialLinksWrapper {
+    display: flex;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+  }
+
+  &__socialLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+    background-color: $white;
+
+    @media screen and (min-width: $xlg) {
+      width: 53px;
+      height: 53px;
+    }
+
+    &:nth-child(2) {
+      margin: 0 10px;
+    }
+  }
+
+  &__socialIcon {
+    width: 21px;
+    height: auto;
+
+    fill: $darkBlue;
+
+    @media screen and (min-width: $xlg) {
+      width: 27px;
+    }
+  }
+
+  &__decorationImage {
+    position: absolute;
+    right: 10%;
+    bottom: -4px;
+
+    @media screen and (min-width: $xlg) {
+      width: 294px;
+    }
+  }
+
+  &__bottomPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+    padding: 26px;
+
+    background-color: $orange;
+    border-radius: 12px;
+    color: $white;
+
+    font-family: $rubik;
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+
+  &__logo {
+    margin-right: 20px;
+
+    width: 70px;
+  }
+}
