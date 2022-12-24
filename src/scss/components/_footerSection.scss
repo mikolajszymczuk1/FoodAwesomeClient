@@ -133,6 +133,10 @@
 
     &:nth-child(2) {
       margin: 0 10px;
+
+      @media screen and (min-width: $xlg) {
+        margin: 0 14px;
+      }
     }
   }
 
@@ -172,11 +176,35 @@
     font-family: $rubik;
     font-weight: 500;
     font-size: 0.75rem;
+
+    @media screen and (min-width: $md) {
+      justify-content: flex-start;
+
+      font-size: 1rem;
+    }
+
+    @media screen and (min-width: $xlg) {
+      padding: 42px 132px;
+
+      border-radius: 15px;
+
+      font-size: 1.25rem;
+    }
   }
 
   &__logo {
     margin-right: 20px;
 
     width: 70px;
+
+    @media screen and (min-width: $md) {
+      width: 100px;
+    }
+
+    @media screen and (min-width: $xlg) {
+      margin-right: 81px;
+
+      width: 159px;
+    }
   }
 }
