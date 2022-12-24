@@ -1,0 +1,182 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.instructionSection {
+  margin: 147px 0 169px 0;
+
+  font-family: $barlow;
+  color: $darkBlue;
+
+  @media screen and (min-width: $xlg) {
+    margin: 286px 0 321px 0;
+  }
+
+  @media screen and (min-width: $xlg) {
+    margin: 386px 0 421px 0;
+  }
+
+  &__title {
+    margin-bottom: 89px;
+
+    font-size: 2.188rem;
+    text-align: center;
+
+    @media screen and (min-width: $xlg) {
+      margin-bottom: 172px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 4.375rem;
+    }
+  }
+
+  &__step {
+    position: relative;
+
+    margin-bottom: 228px;
+
+    text-align: center;
+
+    @media screen and (min-width: $sm) {
+      margin: 0 15% 228px 15%;
+    }
+
+    @media screen and (min-width: $md) {
+      width: 540px;
+
+      text-align: left;
+    }
+
+    @media screen and (min-width: $xlg) {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      width: 642px;
+
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    &--left {
+      @media screen and (min-width: $md) {
+        margin-right: auto;
+      }
+    }
+
+    &--right {
+      @media screen and (min-width: $md) {
+        margin-left: auto;
+      }
+    }
+
+    &:first-of-type {
+      @media screen and (min-width: $xlg) {
+        margin-bottom: 150px;
+      }
+
+      @media screen and (min-width: $superLarge) {
+        margin-left: 10%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media screen and (min-width: $xlg) {
+        margin-top: 173px;
+      }
+
+      @media screen and (min-width: $superLarge) {
+        margin-left: 20%;
+      }
+    }
+  }
+
+  &__decorationImage {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+
+    width: 120px;
+
+    @media screen and (min-width: $md) {
+      display: block;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      width: auto;
+    }
+
+    &--extraMargin {
+      @media screen and (min-width: $superLarge) {
+        left: 147px;
+      }
+    }
+  }
+
+  &__stepTitle {
+    margin-bottom: 25px;
+
+    font-size: 1.563rem;
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 3.125rem;
+    }
+  }
+
+  &__stepContent {
+    font-size: 1.25rem;
+    font-family: $rubik;
+    line-height: 35px;
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 1.563rem;
+      line-height: 40px;
+    }
+  }
+
+  &__nextStepImage {
+    position: absolute;
+    top: calc(100% + 32px);
+
+    @media screen and (min-width: $superLarge) {
+      width: 104px;
+    }
+
+    &--right {
+      right: 54px;
+
+      @media screen and (min-width: $lg) {
+        right: -25%;
+
+        transform: rotate(-20deg);
+      }
+
+      @media screen and (min-width: $xlg) {
+        top: -50px;
+
+        transform: rotate(-45deg);
+      }
+    }
+
+    &--left {
+      left: 54px;
+
+      @media screen and (min-width: $lg) {
+        left: -25%;
+
+        transform: rotate(20deg);
+      }
+
+      @media screen and (min-width: $xlg) {
+        top: calc(100% + 58px);
+        right: 50%;
+        left: auto;
+
+        transform: rotateY(180deg) rotateZ(-60deg);
+      }
+    }
+  }
+}
