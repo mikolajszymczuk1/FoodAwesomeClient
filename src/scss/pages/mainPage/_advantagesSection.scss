@@ -4,7 +4,7 @@
 .advantagesSection {
   position: relative;
 
-  margin-top: 150px;
+  margin-top: 323px;
 
   overflow: hidden;
 
@@ -12,6 +12,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
+    padding: 70px 0;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: 100px 0 70px 0;
   }
 
   @media screen and (min-width: $xlg) {
@@ -82,6 +88,25 @@
       @media screen and (min-width: $xlg) {
         transform: translateY(122px);
       }
+    }
+  }
+
+  &__cardDecoration {
+    position: absolute;
+    bottom: calc(100% - 30px);
+    right: 5%;
+
+    filter: drop-shadow(0 4px 36px rgba($darkBlue, 0.25));
+
+    @media screen and (min-width: $lg) {
+      width: 100px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      bottom: calc(100% - 75px);
+      right: -8%;
+
+      width: 170px;
     }
   }
 
