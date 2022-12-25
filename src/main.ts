@@ -2,9 +2,9 @@ import '@/scss/main.scss';
 // @ts-ignore
 import Router from '@/modules/Router/Router.ts';
 // @ts-ignore
-import Page from '@/modules/Page/Page.ts';
+import MainPage from '@/modules/MainPage/MainPage.ts';
 // @ts-ignore
-import Navigation from '@/modules/Navigation/Navigation.ts';
+import ExplorePage from '@/modules/ExplorePage/ExplorePage.ts';
 
 // Get root app element
 const app = document.querySelector('#app') as HTMLElement;
@@ -13,24 +13,28 @@ const app = document.querySelector('#app') as HTMLElement;
 let router: Router;
 
 // Pages
-let mainPage: Page;
+let mainPage: MainPage;
+let explorePage: ExplorePage;
 
 // Create pages objects
-const loadAllPages = async () => {
-  mainPage = new Page('mainPage', await Page.loadSinglePage('templates/mainPage.mustache.html'));
+const createAllPages = async () => {
+  mainPage = new MainPage('mainPage', 'templates/mainPage.mustache.html');
+  explorePage = new ExplorePage('explorePage', 'templates/explorePage.mustache.html');
+  await mainPage.loadSinglePage();
+  await explorePage.loadSinglePage();
 };
 
 // Init function
 const init = async () => {
-  await loadAllPages();
+  await createAllPages();
   router = new Router([
     { route: '/', page: mainPage },
+    { route: '/explore', page: explorePage },
   ], app);
 
-  router.setPage('/');
-
-  // Init Navigation
-  const navigation = new Navigation('.navigationBar', '#activateButton', '#deactivateButton', '--active');
+  router.setPage(window.location.hash.slice(1) || '');
 };
 
 init();
+
+window.addEventListener('hashchange', () => router.setPage(window.location.hash.slice(1) || ''));

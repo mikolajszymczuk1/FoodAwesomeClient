@@ -35,7 +35,11 @@ export default class Router {
    * @param {Object} data extra data for template
    */
   public setPage(routePath: string, data: Object = { }): void {
-    const renderedPage = this.getTemplate(routePath).page.render(data);
+    const completedRoutePath = `/${routePath}`;
+    if (!this.getTemplate(completedRoutePath)) return;
+    const currentPage = this.getTemplate(completedRoutePath).page;
+    const renderedPage = currentPage.render(data);
     this.appRootElement.innerHTML = renderedPage;
+    currentPage.init();
   }
 }

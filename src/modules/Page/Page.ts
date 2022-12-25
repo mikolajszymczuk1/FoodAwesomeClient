@@ -5,9 +5,19 @@ export default class Page {
 
   private template: string;
 
-  constructor(pageName: string, template: string) {
+  private templatePath: string;
+
+  constructor(pageName: string, templatePath: string) {
     this.pageName = pageName;
-    this.template = template;
+    this.templatePath = templatePath;
+  }
+
+  /**
+   * Return page template
+   * @returns {string}
+   */
+  get pageTemplate(): string {
+    return this.template;
   }
 
   /**
@@ -20,13 +30,12 @@ export default class Page {
   }
 
   /**
-   * Function that load and return single template
-   * @param {string} templatePath template to load
-   * @returns {Promise<string>} fetched template
+   * Function that load single template
+   * @returns {Promise<void>} set template for current page
    */
-  public static async loadSinglePage(templatePath: string): Promise<string> {
-    const response = await fetch(templatePath);
+  public async loadSinglePage(): Promise<void> {
+    const response = await fetch(this.templatePath);
     const template = await response.text();
-    return template;
+    this.template = template;
   }
 }

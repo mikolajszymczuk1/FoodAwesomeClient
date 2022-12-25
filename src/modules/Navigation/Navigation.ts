@@ -1,7 +1,12 @@
+/* eslint-disable max-len */
 export default class Navigation {
-  private activateClassName: string;
+  readonly activateClassName: string = '--active';
 
-  private navigationElementSelector: string;
+  readonly navigationElementSelector: string = '.navigationBar';
+
+  readonly activateButtonSelector: string = '#activateButton';
+
+  readonly deactivateButtonSelector: string = '#deactivateButton';
 
   public navigationElement: HTMLElement;
 
@@ -9,18 +14,10 @@ export default class Navigation {
 
   public deactivateButton: HTMLButtonElement;
 
-  constructor(
-    navigationElementSelector: string,
-    activateButtonSelector: string,
-    deactivateButtonSelector: string,
-    activateClassName: string,
-  ) {
-    this.navigationElementSelector = navigationElementSelector;
-    this.activateClassName = activateClassName;
-    this.navigationElement = document.querySelector(navigationElementSelector) as HTMLElement;
-    this.activateButton = document.querySelector(activateButtonSelector) as HTMLButtonElement;
-    this.deactivateButton = document.querySelector(deactivateButtonSelector) as HTMLButtonElement;
-    this.init();
+  constructor() {
+    this.navigationElement = document.querySelector(this.navigationElementSelector) as HTMLElement;
+    this.activateButton = document.querySelector(this.activateButtonSelector) as HTMLButtonElement;
+    this.deactivateButton = document.querySelector(this.deactivateButtonSelector) as HTMLButtonElement;
   }
 
   init(): void {
@@ -28,6 +25,10 @@ export default class Navigation {
     this.deactivateButton.addEventListener('click', () => this.deactivateMenu());
   }
 
+  /**
+   * Return full activate class name
+   * @returns {string} full class name
+   */
   get fullActivateClassName(): string {
     return this.navigationElementSelector
       .slice(1, this.navigationElementSelector.length) + this.activateClassName;
