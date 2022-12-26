@@ -1,14 +1,28 @@
 // @ts-ignore
+import Page from '@/modules/Page/Page.ts';
+// @ts-ignore
 import { Route } from './types.ts';
 
 export default class Router {
-  private routes: Object[];
+  private routes: Route[];
 
   private appRootElement: HTMLElement;
 
   constructor(routesConfig: Object[], appRootElement: HTMLElement) {
     this.routes = routesConfig;
     this.appRootElement = appRootElement;
+  }
+
+  /**
+   * Initialize router | fetch all pages' templates
+   */
+  async init(): Promise<void> {
+    const results: Promise<Page>[] = [];
+    for (let i = 0; i < this.routes.length; i += 1) {
+      results.push(this.routes[i].page.loadSinglePage());
+    }
+
+    await Promise.all(results);
   }
 
   /**
@@ -35,9 +49,8 @@ export default class Router {
    * @param {Object} data extra data for template
    */
   public setPage(routePath: string, data: Object = { }): void {
-    const completedRoutePath = `/${routePath}`;
-    if (!this.getTemplate(completedRoutePath)) return;
-    const currentPage = this.getTemplate(completedRoutePath).page;
+    if (!this.getTemplate(routePath)) return;
+    const currentPage = this.getTemplate(routePath).page;
     const renderedPage = currentPage.render(data);
     this.appRootElement.innerHTML = renderedPage;
     currentPage.init();
