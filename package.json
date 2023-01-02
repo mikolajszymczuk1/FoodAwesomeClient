@@ -49,6 +49,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "swiper": "^8.4.5"
   }
 }
