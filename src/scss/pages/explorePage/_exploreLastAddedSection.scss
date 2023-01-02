@@ -1,0 +1,34 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.exploreLastAddedSection {
+  &__title {
+
+  }
+
+  &__swiper {
+
+  }
+
+  &__slideWrapper {
+
+  }
+
+  &__slide {
+
+  }
+
+  &__navigationButtonsWrapper {
+
+  }
+
+  &__navButton {
+    &--prev {
+
+    }
+
+    &--next {
+
+    }
+  }
+}
