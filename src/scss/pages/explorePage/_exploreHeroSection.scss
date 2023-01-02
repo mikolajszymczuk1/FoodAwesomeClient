@@ -1,0 +1,82 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.exploreHeroSection {
+  position: relative;
+
+  margin-top: 10px;
+  padding: 63px 0 65px 0;
+
+  background-color: rgba($darkBlue, 0.06);
+  border-radius: 12px;
+
+  text-align: center;
+
+  @media screen and (min-width: $lg) {
+    padding: 90px 0 65px 0;
+  }
+
+  @media screen and (min-width: $xlg) {
+    margin-top: 28px;
+    padding: 111px 0 101px 0;
+
+    border-radius: 15px;
+  }
+
+  @media screen and (min-width: $superLarge) {
+    padding: 141px 0 131px 0;
+  }
+
+  &__image {
+    margin-bottom: 42px;
+
+    @media screen and (min-width: $lg) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+
+      margin-bottom: 0;
+
+      transform: translateX(calc(-50% - 76px));
+    }
+
+    @media screen and (min-width: $xlg) {
+      width: 160px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      width: 204px;
+
+      transform: translateX(-110%);
+    }
+  }
+
+  &__heading {
+    font-size: 2.188rem;
+    font-family: $barlow;
+    font-weight: bold;
+    color: $darkBlue;
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 3.75rem;
+    }
+  }
+
+  &__firstPartHeading {
+    display: block;
+
+    @media screen and (min-width: $lg) {
+      display: unset;
+
+      margin-right: 160px;
+    }
+
+    @media screen and (min-width: $xlg) {
+      margin-right: 200px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      margin-right: 282px;
+    }
+  }
+}

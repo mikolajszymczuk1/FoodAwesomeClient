@@ -1,1 +1,103 @@
-<h1>Explore Page :)</h1>
+<div>
+  <!-- Navigation bar component -->
+  <nav class="navigationBar">
+    <img class="navigationBar__logo" src="assets/svg/Logo.svg" alt="Food Awesome text logo" title="Food Awesome logo">
+    <div class="navigationBar__buttonsWrapper">
+      <!-- Random recipe button -->
+      <a class="iconTextButton iconTextButton--orange" href="#randomRecipe">
+        <svg class="iconTextButton__icon iconTextButton__icon--randomRecipe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M252.3 11.7c-15.6-15.6-40.9-15.6-56.6 0l-184 184c-15.6 15.6-15.6 40.9 0 56.6l184 184c15.6 15.6 40.9 15.6 56.6 0l184-184c15.6-15.6 15.6-40.9 0-56.6l-184-184zM248 224c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM96 248c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm128 80c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm128-80c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zM224 72c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm96 392c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H472.5c13.4 26.9 8.8 60.5-13.6 82.9L320 413.8V464zm160-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg>
+        <span class="iconTextButton__text">Random Recipe</span>
+      </a>
+
+      <!-- Explore button -->
+      <a class="iconTextButton iconTextButton--blue" href="#explore">
+        <svg class="iconTextButton__icon iconTextButton__icon--explore" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M61.1 224C45 224 32 211 32 194.9c0-1.9 .2-3.7 .6-5.6C37.9 168.3 78.8 32 256 32s218.1 136.3 223.4 157.3c.5 1.9 .6 3.7 .6 5.6c0 16.1-13 29.1-29.1 29.1H61.1zM144 128c0-8.8-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16s16-7.2 16-16zm240 16c8.8 0 16-7.2 16-16s-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16zM272 96c0-8.8-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16s16-7.2 16-16zM16 304c0-26.5 21.5-48 48-48H448c26.5 0 48 21.5 48 48s-21.5 48-48 48H64c-26.5 0-48-21.5-48-48zm16 96c0-8.8 7.2-16 16-16H464c8.8 0 16 7.2 16 16v16c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V400z"/></svg>
+        <span class="iconTextButton__text">Explore</span>
+      </a>
+    </div>
+
+    <!-- Menu button -->
+    <button id="activateButton" class="navigationBar__menu">
+      <img class="navigationBar__menuImage" src="assets/svg/menu.svg" alt="Three horizontal lines as burger menu" title="Menu">
+    </button>
+
+    <!-- Menu content -->
+    <div class="navigationBar__content">
+      <div class="navigationBar__menuTopBar">
+        <!-- Explore button -->
+        <a class="iconTextButton iconTextButton--blue iconTextButton--full" href="#explore">
+          <svg class="iconTextButton__icon iconTextButton__icon--explore" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M61.1 224C45 224 32 211 32 194.9c0-1.9 .2-3.7 .6-5.6C37.9 168.3 78.8 32 256 32s218.1 136.3 223.4 157.3c.5 1.9 .6 3.7 .6 5.6c0 16.1-13 29.1-29.1 29.1H61.1zM144 128c0-8.8-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16s16-7.2 16-16zm240 16c8.8 0 16-7.2 16-16s-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16zM272 96c0-8.8-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16s16-7.2 16-16zM16 304c0-26.5 21.5-48 48-48H448c26.5 0 48 21.5 48 48s-21.5 48-48 48H64c-26.5 0-48-21.5-48-48zm16 96c0-8.8 7.2-16 16-16H464c8.8 0 16 7.2 16 16v16c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V400z"/></svg>
+          <span class="iconTextButton__text">Explore</span>
+        </a>
+
+        <!-- Exit button -->
+        <button id="deactivateButton" class="navigationBar__menu">
+          <img class="navigationBar__menuImage" src="assets/svg/exit.svg" alt="Two lines as cross icon" title="Exit Menu">
+        </button>
+      </div>
+
+      <div class="navigationBar__mainContent">
+        <a class="navigationBar__link" href="#aboutUs">About Us</a>
+        <a class="navigationBar__link" href="#contact">Contact</a>
+
+        <div class="navigationBar__menuSeparator"></div>
+
+        <span class="navigationBar__linksGroup">
+          <a class="navigationBar__link navigationBar__link--orange" href="#login">Login</a> /
+          <a class="navigationBar__link" href="#register">Register</a>
+        </span>
+
+        <!-- Random recipe button -->
+        <a class="iconTextButton iconTextButton--orange iconTextButton--full" href="#randomRecipe">
+          <svg class="iconTextButton__icon iconTextButton__icon--randomRecipe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M252.3 11.7c-15.6-15.6-40.9-15.6-56.6 0l-184 184c-15.6 15.6-15.6 40.9 0 56.6l184 184c15.6 15.6 40.9 15.6 56.6 0l184-184c15.6-15.6 15.6-40.9 0-56.6l-184-184zM248 224c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM96 248c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm128 80c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm128-80c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zM224 72c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm96 392c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H472.5c13.4 26.9 8.8 60.5-13.6 82.9L320 413.8V464zm160-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg>
+          <span class="iconTextButton__text">Random Recipe</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero section -->
+    <header class="exploreHeroSection">
+      <img class="exploreHeroSection__image" src="assets/svg/illustrations/manWithKebab.svg" alt="Man with kebab illustration" title="Man with kebab">
+      <h1 class="exploreHeroSection__heading">
+        <span class="exploreHeroSection__firstPartHeading">Find your</span>
+        <span class="partColorText">cooking</span> inspiration
+      </h1>
+    </header>
+  </main>
+
+  <!-- Footer section -->
+  <footer class="footerSection">
+    <div class="footerSection__topPart">
+      <h3 class="footerSection__title">Cook Together With <br><span class="partColorText">Food Awesome</span></h3>
+      <div class="footerSection__linksWrapper">
+        <a class="footerSection__navLink" href="#randomRecipe">Random Recipe</a>
+        <a class="footerSection__navLink" href="#explore">Explore</a>
+        <a class="footerSection__navLink" href="#aboutUs">About Us</a>
+        <a class="footerSection__navLink" href="#contact">Contact</a>
+      </div>
+
+      <div class="footerSection__socialLinksWrapper">
+        <a class="footerSection__socialLink" href="#facebook">
+          <svg class="footerSection__socialIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+        </a>
+
+        <a class="footerSection__socialLink" href="#youtube">
+          <svg class="footerSection__socialIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+        </a>
+
+        <a class="footerSection__socialLink" href="#twitter">
+          <svg class="footerSection__socialIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+        </a>
+      </div>
+
+      <img class="footerSection__decorationImage" src="assets/svg/illustrations/manWithPizza.svg" alt="Man with pizza illustration" title="Man with pizza">
+    </div>
+
+    <div class="footerSection__bottomPart">
+      <img class="footerSection__logo" src="assets/svg/LogoWhite.svg" alt="Food Awesome text logo" title="Food Awesome logo">
+      Copyright 2023 | FoodAwesome.com
+    </div>
+  </footer>
+</div>
