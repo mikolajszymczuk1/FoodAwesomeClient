@@ -3,32 +3,44 @@
 
 .exploreLastAddedSection {
   &__title {
+    margin-bottom: 32px;
 
+    text-align: center;
+    font-size: 1.563rem;
+    color: $darkBlue;
+    font-family: $barlow;
+    font-weight: 500;
   }
 
-  &__swiper {
+  &__swiper {}
 
-  }
-
-  &__slideWrapper {
-
-  }
+  &__slideWrapper {}
 
   &__slide {
-
+    width: 300px !important;
+    height: 193px !important;
   }
 
   &__navigationButtonsWrapper {
+    display: flex;
+    justify-content: center;
 
+    margin-top: 44px;
   }
 
   &__navButton {
-    &--prev {
+    border: 0;
+    outline: none;
+    background-color: transparent;
 
+    &--prev {
+      margin-right: 77px;
     }
 
     &--next {
-
+      transform: rotateY(180deg);
     }
   }
+
+  &__navBtnIcon {}
 }

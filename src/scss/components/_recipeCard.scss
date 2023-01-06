@@ -1,0 +1,90 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.recipeCard {
+  $self: &;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-color: $darkBlue;
+  border-radius: 12px;
+  overflow: hidden;
+
+  font-size: 1.25rem;
+  font-family: $barlow;
+  color: $white;
+
+  &--forSlider {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__favouriteIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    transform: translateY(-40px);
+    opacity: 0;
+    transition: transform 200ms ease-out,
+                opacity 250ms ease-out;
+
+    #{ $self }:hover & {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__profileWrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+
+    font-size: 0.75rem;
+    color: $white;
+    font-family: $rubik;
+    font-weight: 500;
+
+    #{ $self }:hover & {
+      opacity: 1;
+    }
+  }
+
+  &__profileIcon {
+    margin-right: 5px;
+  }
+
+  &__likesWrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    transform: translateY(40px);
+    opacity: 0;
+    transition: transform 200ms ease-out,
+                opacity 250ms ease-out;
+
+    font-family: $rubik;
+    font-weight: bold;
+    color: $white;
+    font-size: 0.938rem;
+
+    #{ $self }:hover & {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__likeIcon {
+    margin-right: 5px;
+  }
+}

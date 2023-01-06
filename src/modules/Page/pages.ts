@@ -4,5 +4,5 @@ import MainPage from '@/modules/MainPage/MainPage.ts';
 import ExplorePage from '@/modules/ExplorePage/ExplorePage.ts';
 
 // All application pages
-export const mainPage = new MainPage('mainPage', 'templates/mainPage.mustache.html');
-export const explorePage = new ExplorePage('explorePage', 'templates/explorePage.mustache.html');
+export const mainPage = new MainPage('mainPage');
+export const explorePage = new ExplorePage('explorePage');

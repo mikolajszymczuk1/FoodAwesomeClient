@@ -8,6 +8,7 @@
 @use './components/navigationBar';
 @use './components/iconTextButton';
 @use './components/footerSection';
+@use './components/recipeCard';
 
 // === Pages ===
 
@@ -20,3 +21,4 @@
 
 // Explore page
 @use './pages/explorePage/exploreHeroSection';
+@use './pages/explorePage/exploreLastAddedSection';

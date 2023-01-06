@@ -1,7 +1,7 @@
 // @ts-ignore
-import Page from '@/modules/Page/Page.ts';
-// @ts-ignore
 import NavigationBar from '@/modules/Navigation/Navigation.ts';
+// @ts-ignore
+import Page from '@/modules/Page/Page.ts';
 import Swiper, { Navigation, A11y } from 'swiper';
 
 import 'swiper/scss';
@@ -33,7 +33,7 @@ export default class ExplorePage extends Page {
       direction: 'horizontal',
       slidesPerView: 'auto',
       centeredSlides: true,
-      spaceBetween: 15,
+      spaceBetween: 17,
       loop: true,
       a11y: {
         prevSlideMessage: 'Previous slide',

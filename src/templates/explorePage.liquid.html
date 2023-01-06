@@ -1,0 +1,79 @@
+<div>
+  {% render 'navigationBar' %}
+
+  <!-- Hero section -->
+  <header class="exploreHeroSection">
+    <img class="exploreHeroSection__image" src="assets/svg/illustrations/manWithKebab.svg" alt="Man with kebab illustration" title="Man with kebab">
+    <h1 class="exploreHeroSection__heading">
+      <span class="exploreHeroSection__firstPartHeading">Find your</span>
+      <span class="partColorText">cooking</span> inspiration
+    </h1>
+  </header>
+
+  <main>
+    <!-- Last added section (Swiper slider) -->
+    <section class="exploreLastAddedSection" style="margin: 74px 0 131px 0">
+      <h2 class="exploreLastAddedSection__title">Last added</h2>
+      <div class="exploreLastAddedSection__swiper swiper">
+        <div class="exploreLastAddedSection__slideWrapper swiper-wrapper">
+          <div class="exploreLastAddedSection__slide swiper-slide">
+            <div class="recipeCard recipeCard--forSlider">
+              Recipe Card #1
+              <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
+              <div class="recipeCard__profileWrapper">
+                <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
+                By Michael Johns
+              </div>
+              <div class="recipeCard__likesWrapper">
+                <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
+                123
+              </div>
+            </div>
+          </div>
+
+          <div class="exploreLastAddedSection__slide swiper-slide">
+            <div class="recipeCard recipeCard--forSlider">
+              Recipe Card #2
+              <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
+              <div class="recipeCard__profileWrapper">
+                <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
+                By Michael Johns
+              </div>
+              <div class="recipeCard__likesWrapper">
+                <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
+                123
+              </div>
+            </div>
+          </div>
+
+          <div class="exploreLastAddedSection__slide swiper-slide">
+            <div class="recipeCard recipeCard--forSlider">
+              Recipe Card #3
+              <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
+              <div class="recipeCard__profileWrapper">
+                <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
+                By Michael Johns
+              </div>
+              <div class="recipeCard__likesWrapper">
+                <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
+                123
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exploreLastAddedSection__navigationButtonsWrapper">
+          <button class="exploreLastAddedSection__navButton exploreLastAddedSection__navButton--prev swiper-button-prev">
+            <img class="exploreLastAddedSection__navBtnIcon" src="assets/svg/navArrow.svg" alt="Orange arrow icon" title="Arrow icon">
+          </button>
+
+          <button class="exploreLastAddedSection__navButton exploreLastAddedSection__navButton--next swiper-button-next">
+            <img class="exploreLastAddedSection__navBtnIcon" src="assets/svg/navArrow.svg" alt="Orange arrow icon" title="Arrow icon">
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% render 'footerSection' %}
+</div>

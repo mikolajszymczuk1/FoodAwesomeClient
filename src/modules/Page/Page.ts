@@ -1,41 +1,19 @@
-import Mustache from 'mustache';
+// @ts-ignore
+import liquidEngine from '@/modules/LiquidTemplateEngine/LiquidTemplateEngine.ts';
 
 export default class Page {
-  private pageName: string;
+  protected pageName: string;
 
-  private template: string;
-
-  private templatePath: string;
-
-  constructor(pageName: string, templatePath: string) {
+  constructor(pageName: string) {
     this.pageName = pageName;
-    this.templatePath = templatePath;
-  }
-
-  /**
-   * Return page template
-   * @returns {string}
-   */
-  get pageTemplate(): string {
-    return this.template;
   }
 
   /**
    * Function render template and return rendered page
-   * @param {Object} data extra data for template
+   * `This method should be overridden`
    * @returns {string} rendered mustache template
    */
-  public render(data: Object): string {
-    return Mustache.render(this.template, data);
-  }
-
-  /**
-   * Function that load single template
-   * @returns {Promise<void>} set template for current page
-   */
-  public async loadSinglePage(): Promise<void> {
-    const response = await fetch(this.templatePath);
-    const template = await response.text();
-    this.template = template;
+  public render(data: Object = { }): string {
+    return liquidEngine.renderFileSync(this.pageName, data);
   }
 }
