@@ -8,6 +8,10 @@
   align-items: center;
   position: relative;
 
+  margin: 0 20px 40px 20px;
+
+  height: 216px;
+
   background-color: $darkBlue;
   border-radius: 12px;
   overflow: hidden;
@@ -16,7 +20,23 @@
   font-family: $barlow;
   color: $white;
 
+  @media screen and (min-width: $sm) {
+    width: 100%;
+
+    margin: 0;
+  }
+
+  @media screen and (min-width: $xlg) {
+    border-radius: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &--forSlider {
+    margin: 0;
+
     width: 100%;
     height: 100%;
   }

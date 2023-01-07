@@ -12,54 +12,26 @@
 
   <main>
     <!-- Last added section (Swiper slider) -->
-    <section class="exploreLastAddedSection" style="margin: 74px 0 131px 0">
+    <section class="exploreLastAddedSection">
       <h2 class="exploreLastAddedSection__title">Last added</h2>
       <div class="exploreLastAddedSection__swiper swiper">
         <div class="exploreLastAddedSection__slideWrapper swiper-wrapper">
-          <div class="exploreLastAddedSection__slide swiper-slide">
-            <div class="recipeCard recipeCard--forSlider">
-              Recipe Card #1
-              <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
-              <div class="recipeCard__profileWrapper">
-                <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
-                By Michael Johns
-              </div>
-              <div class="recipeCard__likesWrapper">
-                <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
-                123
-              </div>
-            </div>
-          </div>
-
-          <div class="exploreLastAddedSection__slide swiper-slide">
-            <div class="recipeCard recipeCard--forSlider">
-              Recipe Card #2
-              <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
-              <div class="recipeCard__profileWrapper">
-                <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
-                By Michael Johns
-              </div>
-              <div class="recipeCard__likesWrapper">
-                <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
-                123
+          {% for recipeName in lastAddedRecipes %}
+            <div class="exploreLastAddedSection__slide swiper-slide">
+              <div class="recipeCard recipeCard--forSlider">
+                {{ recipeName }}
+                <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
+                <div class="recipeCard__profileWrapper">
+                  <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
+                  By Michael Johns
+                </div>
+                <div class="recipeCard__likesWrapper">
+                  <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
+                  123
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="exploreLastAddedSection__slide swiper-slide">
-            <div class="recipeCard recipeCard--forSlider">
-              Recipe Card #3
-              <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
-              <div class="recipeCard__profileWrapper">
-                <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
-                By Michael Johns
-              </div>
-              <div class="recipeCard__likesWrapper">
-                <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
-                123
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
         <div class="exploreLastAddedSection__navigationButtonsWrapper">
@@ -72,6 +44,48 @@
           </button>
         </div>
       </div>
+    </section>
+
+    <!-- Filters section (search bar / meal type filter) -->
+    <section class="exploreFiltersSection">
+      <!-- Search bar -->
+      <div class="exploreFiltersSection__searchBar">
+        <input class="exploreFiltersSection__searchInput" type="text" placeholder="Search recipe ...">
+        <button class="exploreFiltersSection__searchButton">
+            <img class="exploreFiltersSection__searchIcon" src="assets/svg/search.svg" alt="Search icon" title="Search icon">
+        </button>
+      </div>
+
+      <!-- Meal type filter -->
+      <div class="exploreFiltersSection__mealTypeFilter">
+        Sort By Category
+        <img class="exploreFiltersSection__filterIcon" src="assets/svg/categoryFilter.svg" alt="Filter menu icon" title="Filter icon">
+        <div class="exploreFiltersSection__categoriesWrapper">
+          <button class="exploreFiltersSection__categoryButton">Breakfast</button>
+          <button class="exploreFiltersSection__categoryButton">Dessert</button>
+          <button class="exploreFiltersSection__categoryButton">Dinner</button>
+          <button class="exploreFiltersSection__categoryButton">Lunch</button>
+          <button class="exploreFiltersSection__categoryButton">Main</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section (all recipes here) -->
+    <section class="exploreGallerySection">
+      {% for recipeName in recipes %}
+        <div class="recipeCard">
+          {{ recipeName }}
+          <img class="recipeCard__favouriteIcon" src="assets/svg/star.svg" alt="Yellow start icon" title="Start icon">
+          <div class="recipeCard__profileWrapper">
+            <img class="recipeCard__profileIcon" src="assets/svg/profile.svg" alt="Profile icon" title="Profile icon">
+            By Michael Johns
+          </div>
+          <div class="recipeCard__likesWrapper">
+            <img class="recipeCard__likeIcon" src="assets/svg/heart.svg" alt="Red heart icon" title="Heart icon">
+            123
+          </div>
+        </div>
+      {% endfor %}
     </section>
   </main>
 

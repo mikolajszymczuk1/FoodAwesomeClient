@@ -24,6 +24,22 @@ export default class ExplorePage extends Page {
   }
 
   /**
+   * Render method for explore page
+   * @returns {string} rendered template
+   */
+  public render(): string {
+    const allRecipes: string[] = [];
+    for (let i = 0; i < 20; i += 1) {
+      allRecipes.push(`Example Recipe #${i + 1}`);
+    }
+
+    return super.render({
+      lastAddedRecipes: allRecipes.slice(0, 5),
+      recipes: allRecipes,
+    });
+  }
+
+  /**
    * Create Swiper instance
    */
   private setupSwiper(): void {
@@ -48,8 +64,8 @@ export default class ExplorePage extends Page {
         prevEl: this.swiperNavButtonPrevSelector,
       },
       breakpoints: {
-        768: {
-          spaceBetween: 30,
+        1700: {
+          spaceBetween: 24,
         },
       },
     });

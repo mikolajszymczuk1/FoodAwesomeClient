@@ -1,0 +1,220 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.exploreFiltersSection {
+  margin-bottom: 65px;
+
+  @media screen and (min-width: $sm) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 5% 65px 5%;
+  }
+
+  @media screen and (min-width: $xlg) {
+    margin: 0 8% 98px 8%;
+  }
+
+  @media screen and (min-width: $superLarge) {
+    margin: 0 10% 98px 10%;
+  }
+
+  // Styles for search bar
+  &__searchBar {
+    position: relative;
+
+    margin: 0 5% 38px 5%;
+
+    @media screen and (min-width: $sm) {
+      width: 304px;
+
+      margin: 0;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      width: 344px;
+    }
+  }
+
+  &__searchInput {
+    width: 100%;
+    height: 54px;
+
+    padding-left: 33px;
+
+    border-radius: 40px;
+    border: 0;
+    outline: none;
+    box-shadow: 0 6px 36px rgba($darkBlue, 0.12);
+
+    @media screen and (min-width: $superLarge) {
+      height: 61px;
+
+      padding-left: 37px;
+    }
+
+    &::placeholder {
+      color: $darkBlue;
+      font-family: $rubik;
+      font-size: 0.75rem;
+
+      @media screen and (min-width: $superLarge) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__searchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+
+    width: 41px;
+    height: 41px;
+
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: $darkBlue;
+
+    @media screen and (min-width: $superLarge) {
+      right: 9px;
+
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &__searchIcon {
+    @media screen and (min-width: $superLarge) {
+      width: 24px;
+    }
+  }
+
+  // Styles for meal type filter
+  &__mealTypeFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    margin: 0 5%;
+
+    font-size: 0.75rem;
+    color: $darkBlue;
+    font-family: $rubik;
+    font-weight: 500;
+
+    @media screen and (min-width: $sm) {
+      justify-content: center;
+
+      margin: 0;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      font-size: 1rem;
+    }
+  }
+
+  &__filterIcon {
+    @media screen and (min-width: $sm) {
+      margin-left: 25px;
+    }
+
+    @media screen and (min-width: $mlg) {
+      display: none;
+    }
+  }
+
+  &__categoriesWrapper {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    width: 80%;
+
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: 0 6px 36px rgba($darkBlue, 0.12);
+    overflow: hidden;
+
+    z-index: 1;
+
+    @media screen and (min-width: $sm) {
+      width: 300px;
+    }
+
+    @media screen and (min-width: $mlg) {
+      display: flex;
+      flex-direction: row;
+      position: static;
+
+      width: auto;
+
+      margin-left: 37px;
+
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    &--active {
+      display: flex;
+    }
+  }
+
+  &__categoryButton {
+    width: 100%;
+
+    padding: 20px 0;
+
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    border-bottom: solid 1px rgba($darkBlue, 0.12);
+
+    color: $darkBlue;
+    font-size: 0.75rem;
+    font-family: $rubik;
+
+    @media screen and (min-width: $mlg) {
+      width: auto;
+
+      padding: 14px 22px;
+      margin-right: 15px;
+
+      border-bottom: 0;
+      border-radius: 12px;
+      background-color: $darkBlue;
+
+      color: $white;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: $superLarge) {
+      padding: 17px 28px;
+
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: $orange;
+
+      color: $darkBlue;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+
+.exploreGallerySection {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  @media screen and (min-width: $md) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: $lg) {
+    margin: 0 5% 60px 5%;
+  }
+
+  @media screen and (min-width: $mlg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: $xlg) {
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 0 8% 60px 8%;
+  }
+
+  @media screen and (min-width: $superLarge) {
+    gap: 60px;
+
+    margin: 0 10% 60px 10%;
+  }
+}

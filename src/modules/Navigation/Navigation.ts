@@ -16,8 +16,8 @@ export default class Navigation {
 
   constructor() {
     this.navigationElement = document.querySelector(this.navigationElementSelector) as HTMLElement;
-    this.activateButton = document.querySelector(this.activateButtonSelector) as HTMLButtonElement;
-    this.deactivateButton = document.querySelector(this.deactivateButtonSelector) as HTMLButtonElement;
+    this.activateButton = this.navigationElement.querySelector(this.activateButtonSelector) as HTMLButtonElement;
+    this.deactivateButton = this.navigationElement.querySelector(this.deactivateButtonSelector) as HTMLButtonElement;
   }
 
   init(): void {

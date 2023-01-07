@@ -2,6 +2,24 @@
 @use '@/scss/utils/breakpoints' as *;
 
 .exploreLastAddedSection {
+  margin: 74px 0 131px 0;
+
+  @media screen and (min-width: $lg) {
+    margin: 74px 5% 131px 5%;
+  }
+
+  @media screen and (min-width: $mlg) {
+    margin: 132px 5% 76px 5%;
+  }
+
+  @media screen and (min-width: $xlg) {
+    margin: 132px 8% 76px 8%;
+  }
+
+  @media screen and (min-width: $superLarge) {
+    margin: 132px 10% 76px 10%;
+  }
+
   &__title {
     margin-bottom: 32px;
 
@@ -10,15 +28,69 @@
     color: $darkBlue;
     font-family: $barlow;
     font-weight: 500;
+
+    @media screen and (min-width: $lg) {
+      text-align: left;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      margin-bottom: 61px;
+
+      font-size: 2.188rem;
+    }
   }
 
-  &__swiper {}
+  &__swiper {
+    position: relative;
+    top: 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+
+      width: 50px;
+      height: 193px;
+
+      background-color: $white;
+      background: linear-gradient(90deg, rgba($white, 1) 10%, rgba($white, 0) 80%);
+
+      z-index: 2;
+
+      @media screen and (min-width: $xlg) {
+        width: 200px;
+
+        background: linear-gradient(90deg, rgba($white, 1) 20%, rgba($white, 0) 80%);
+      }
+
+      @media screen and (min-width: $superLarge) {
+        height: 216px;
+      }
+    }
+
+    &::before {
+      content: "";
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      right: 0;
+
+      transform: rotate(180deg);
+    }
+  }
 
   &__slideWrapper {}
 
   &__slide {
     width: 300px !important;
     height: 193px !important;
+
+    @media screen and (min-width: $superLarge) {
+      width: 334px !important;
+      height: 216px !important;
+    }
   }
 
   &__navigationButtonsWrapper {
@@ -26,6 +98,10 @@
     justify-content: center;
 
     margin-top: 44px;
+
+    @media screen and (min-width: $lg) {
+      margin-top: 0;
+    }
   }
 
   &__navButton {
@@ -33,12 +109,31 @@
     outline: none;
     background-color: transparent;
 
+    @media screen and (min-width: $lg) {
+      position: absolute;
+      top: 50%;
+
+      z-index: 3;
+    }
+
     &--prev {
       margin-right: 77px;
+
+      @media screen and (min-width: $lg) {
+        left: 0;
+
+        transform: translateY(-50%);
+      }
     }
 
     &--next {
       transform: rotateY(180deg);
+
+      @media screen and (min-width: $lg) {
+        right: 0;
+
+        transform: rotateY(180deg) translateY(-50%);
+      }
     }
   }
 
