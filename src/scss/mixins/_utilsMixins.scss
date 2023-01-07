@@ -1,0 +1,6 @@
+// Reset button styles
+@mixin resetButton($bgColor: transparent) {
+  border: 0;
+  outline: none;
+  background-color: $bgColor;
+}

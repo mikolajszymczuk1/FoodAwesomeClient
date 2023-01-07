@@ -1,0 +1,89 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+@use '@/scss/mixins/utilsMixins' as *;
+
+.explorePaginationSection {
+  margin-bottom: 131px;
+
+  @media screen and (min-width: $lg) {
+    margin: 0 5% 131px 5%;
+  }
+
+  @media screen and (min-width: $xlg) {
+    margin: 0 8% 131px 8%;
+  }
+
+  @media screen and (min-width: $superLarge) {
+    margin: 15px 10% 198px 10%;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: $md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__paginationNavButton {
+    @include resetButton();
+
+    &--prev {
+      margin-right: 13px;
+
+      @media screen and (min-width: $md) {
+        margin-right: 15px;
+      }
+    }
+
+    &--next {
+      margin-left: 13px;
+
+      transform: rotateY(180deg);
+
+      @media screen and (min-width: $md) {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  &__paginationNavIcon {
+    width: 40px;
+  }
+
+  &__paginationWrapper {}
+
+  &__paginationBlock {
+    margin-right: 6px;
+
+    width: 30px;
+    height: 30px;
+
+    @include resetButton($orange);
+    border-radius: 5px;
+
+    font-size: 0.75rem;
+    color: $darkBlue;
+    font-family: $rubik;
+    font-weight: 500;
+
+    @media screen and (min-width: $md) {
+      width: 35px;
+      height: 35px;
+
+      font-size: 0.938rem;
+    }
+
+    &--active {
+      background-color: $darkBlue;
+
+      color: $white;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

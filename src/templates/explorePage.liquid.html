@@ -87,6 +87,27 @@
         </div>
       {% endfor %}
     </section>
+
+    <!-- Pagination section -->
+    <section class="explorePaginationSection">
+      <div class="explorePaginationSection__pagination">
+        <button class="explorePaginationSection__paginationNavButton explorePaginationSection__paginationNavButton--prev">
+          <img class="explorePaginationSection__paginationNavIcon" src="assets/svg/navArrow.svg" alt="Pagination navigation arrow prev" title="Pagination prev arrow">
+        </button>
+
+        <div class="explorePaginationSection__paginationWrapper">
+          <button class="explorePaginationSection__paginationBlock explorePaginationSection__paginationBlock--active">1</button>
+          <button class="explorePaginationSection__paginationBlock">2</button>
+          <button class="explorePaginationSection__paginationBlock">3</button>
+          <button class="explorePaginationSection__paginationBlock">4</button>
+          <button class="explorePaginationSection__paginationBlock">5</button>
+        </div>
+
+        <button class="explorePaginationSection__paginationNavButton explorePaginationSection__paginationNavButton--next">
+          <img class="explorePaginationSection__paginationNavIcon" src="assets/svg/navArrow.svg" alt="Pagination navigation arrow next" title="Pagination next arrow">
+        </button>
+      </div>
+    </section>
   </main>
 
   {% render 'footerSection' %}
