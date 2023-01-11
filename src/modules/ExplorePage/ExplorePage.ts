@@ -1,9 +1,6 @@
 // @ts-ignore
-import NavigationBar from '@/modules/Navigation/Navigation.ts';
-// @ts-ignore
 import Page from '@/modules/Page/Page.ts';
 import Swiper, { Navigation, A11y } from 'swiper';
-
 import 'swiper/scss';
 
 export default class ExplorePage extends Page {
@@ -15,9 +12,7 @@ export default class ExplorePage extends Page {
 
   // eslint-disable-next-line class-methods-use-this
   public init(): void {
-    // Init Navigation
-    const navigation = new NavigationBar();
-    navigation.init();
+    super.init();
 
     // Setup Swiper slider
     this.setupSwiper();

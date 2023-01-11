@@ -1,11 +1,20 @@
 // @ts-ignore
 import liquidEngine from '@/modules/LiquidTemplateEngine/LiquidTemplateEngine.ts';
+// @ts-ignore
+import Navigation from '@/modules/Navigation/Navigation.ts';
 
 export default class Page {
   protected pageName: string;
 
   constructor(pageName: string) {
     this.pageName = pageName;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  public init(): void {
+    // Init Navigation
+    const navigation = new Navigation();
+    navigation.init();
   }
 
   /**
