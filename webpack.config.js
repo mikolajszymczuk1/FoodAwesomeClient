@@ -37,6 +37,7 @@ const config = {
       patterns: [
         { from: './src/templates', to: 'templates' },
         { from: './src/assets', to: 'assets' },
+        { from: './src/public', to: '' },
       ],
     }),
 
