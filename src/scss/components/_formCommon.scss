@@ -1,0 +1,160 @@
+@use '@/scss/utils/variables' as *;
+@use '@/scss/utils/breakpoints' as *;
+@use '@/scss/mixins/utilsMixins' as *;
+
+@mixin linkButtonText($withFontSize: false) {
+  font-family: $rubik;
+  font-weight: 500;
+  color: $darkBlue;
+
+  @if $withFontSize {
+    font-size: 0.75rem;
+  }
+}
+
+.formCommon {
+  margin: 0 auto;
+
+  width: 272px;
+
+  @media screen and (min-width: $xlg) {
+    width: 345px;
+  }
+
+  &--wide {
+    width: 320px;
+
+    @media screen and (min-width: $xlg) {
+      width: 440px;
+    }
+  }
+
+  &__title  {
+    margin-bottom: 39px;
+
+    color: $darkBlue;
+    font-family: $barlow;
+    font-weight: 500;
+    font-size: 1.5625rem;
+    text-align: center;
+
+    @media screen and (min-width: $xlg) {
+      margin-bottom: 56px;
+
+      font-size: 3.125rem;
+      text-align: left;
+    }
+  }
+
+  &__singleField {
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $xlg) {
+      margin-bottom: 51px;
+    }
+  }
+
+  &__inputLabel {
+    display: block;
+
+    margin-bottom: 12px;
+
+    @include linkButtonText();
+
+    @media screen and (min-width: $xlg) {
+      margin-bottom: 15px;
+
+      font-size: 1.25rem;
+    }
+  }
+
+  &__input {
+    padding-left: 21px;
+
+    width: 100%;
+    height: 46px;
+
+    border-radius: 12px;
+    border: solid 1px $darkBlue;
+
+    @media screen and (min-width: $xlg) {
+      height: 59px;
+
+      padding-left: 27px;
+
+      border-radius: 15px;
+    }
+
+    &:focus {
+      outline: $orange;
+    }
+
+    &::placeholder {
+      color: $darkBlue;
+      font-size: 0.75rem;
+      font-family: $rubik;
+
+      @media screen and (min-width: $xlg) {
+        font-size: 0.9375rem;
+      }
+    }
+  }
+
+  &__inputWrapper {
+    position: relative;
+  }
+
+  &__passwordVisibility {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+
+    width: 19px;
+    height: auto;
+
+    transform: translateY(-50%);
+    fill: $orange;
+
+    @media screen and (min-width: $xlg) {
+      width: 24px;
+    }
+  }
+
+  &__submitWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__submit {
+    padding: 10px 33px;
+
+    @include resetButton($orange);
+    border-radius: 25px;
+
+    @include linkButtonText(true);
+
+    @media screen and (min-width: $xlg) {
+      padding: 12px 40px;
+
+      font-size: 0.9375rem;
+    }
+
+    &--extraMargin {
+      margin-right: 33px;
+
+      @media screen and (min-width: $xlg) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include linkButtonText(true);
+
+    @media screen and (min-width: $xlg) {
+      font-size: 0.9375rem;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use '@/scss/utils/breakpoints' as *;
+
+.loginFormSection {
+  position: relative;
+
+  margin: 76px auto 126px auto;
+
+  @media screen and (min-width: $lg) {
+    margin: 100px auto 200px auto;
+  }
+
+  @media screen and (min-width: $xlg) {
+    margin: 188px auto 319px auto;
+  }
+
+  &__decoration {
+    display: none;
+    position: absolute;
+    bottom: -126px;
+    left: 5%;
+
+    width: 25%;
+    max-width: 389px;
+
+    @media screen and (min-width: $md) {
+      display: block;
+    }
+
+    @media screen and (min-width: $lg) {
+      bottom: -200px;
+    }
+
+    @media screen and (min-width: $xlg) {
+      bottom: -319px;
+    }
+
+    @media screen and (min-width: $superLarge) {
+      left: 50%;
+
+      transform: translate(calc(-50% - 130%));
+    }
+  }
+}

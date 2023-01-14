@@ -9,6 +9,7 @@
 @use './components/iconTextButton';
 @use './components/footerSection';
 @use './components/recipeCard';
+@use './components/formCommon';
 
 // === Pages ===
 
@@ -25,3 +26,9 @@
 @use './pages/explorePage/exploreFiltersSection';
 @use './pages/explorePage/exploreGallerySection';
 @use './pages/explorePage/explorePaginationSection';
+
+// Login page
+@use './pages/loginPage/loginFormSection';
+
+// Register page
+@use './pages/registerPage/registerFormSection';

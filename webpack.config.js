@@ -15,7 +15,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
-    open: true,
+    open: false,
     host: 'localhost',
     devMiddleware: {
       writeToDisk: true,
@@ -25,6 +25,7 @@ const config = {
     },
     compress: true,
     liveReload: true,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
