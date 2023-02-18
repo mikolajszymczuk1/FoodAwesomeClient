@@ -39,5 +39,6 @@ export default class Router {
     const renderedPage: string = currentPage.render();
     this.appRootElement.innerHTML = renderedPage;
     currentPage.init();
+    window.history.replaceState({}, '', routePath);
   }
 }
