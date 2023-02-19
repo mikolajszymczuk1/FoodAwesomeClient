@@ -80,6 +80,7 @@ const config = {
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
+  devtool: 'source-map',
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
     alias: {
