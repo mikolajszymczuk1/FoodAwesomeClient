@@ -23,17 +23,17 @@ export default class RegisterPage extends Page {
    */
   private async submitHandle(e: Event): Promise<void> {
     e.preventDefault();
-    const example = await registerService(
+    const registerResponse = await registerService(
       this.formElement.username.value,
       this.formElement.email.value,
       this.formElement.password.value,
       this.formElement.repeatPassword.value,
     );
 
-    if (example.response === 'OK') {
+    if (registerResponse.response === 'OK') {
       routerObj.setPage('/login');
     }
 
-    console.log(example);
+    console.log(registerResponse);
   }
 }

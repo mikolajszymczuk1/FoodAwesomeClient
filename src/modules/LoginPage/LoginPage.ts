@@ -2,6 +2,10 @@
 import Page from '@/modules/Page/Page.ts';
 // @ts-ignore
 import { loginService } from '@/modules/Services/services.ts';
+// @ts-ignore
+import userStore from '@/modules/Store/UserStore.ts';
+// @ts-ignore
+import routerObj from '@/modules/Router/routerObj.ts';
 
 export default class LoginPage extends Page {
   readonly formSelector: string = '.formCommon';
@@ -28,7 +32,10 @@ export default class LoginPage extends Page {
    */
   private async submitHandle(e: Event): Promise<void> {
     e.preventDefault();
-    const example = await loginService(this.emailInput.value, this.passwordInput.value);
-    console.log(example);
+    const { token } = await loginService(this.emailInput.value, this.passwordInput.value);
+    if (token) {
+      userStore.login(token);
+      routerObj.setPage('/');
+    }
   }
 }
