@@ -1,5 +1,6 @@
 @use '@/scss/utils/breakpoints' as *;
 @use '@/scss/utils/variables' as *;
+@use '@/scss/mixins/utilsMixins' as *;
 
 .navigationBar {
   $self: &;
@@ -153,6 +154,10 @@
       color: $orange;
     }
 
+    &--logout-button {
+      @include resetButton();
+      cursor: pointer;
+    }
   }
 
   &__menuSeparator {

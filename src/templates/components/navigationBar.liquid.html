@@ -44,8 +44,12 @@
       <div class="navigationBar__menuSeparator"></div>
 
       <span class="navigationBar__linksGroup">
-        <a class="navigationBar__link navigationBar__link--orange" href="/login">Login</a> /
-        <a class="navigationBar__link" href="/register">Register</a>
+        {% if isLoggedIn == false %}
+          <a class="navigationBar__link navigationBar__link--orange" href="/login">Login</a> /
+          <a class="navigationBar__link" href="/register">Register</a>
+        {% else %}
+          <button class="navigationBar__link navigationBar__link--logout-button" name="logout-button">Logout</button>
+        {% endif %}
       </span>
 
       <!-- Random recipe button -->

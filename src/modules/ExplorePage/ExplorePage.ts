@@ -2,6 +2,8 @@
 import Page from '@/modules/Page/Page.ts';
 import Swiper, { Navigation, A11y } from 'swiper';
 import 'swiper/scss';
+// @ts-ignore
+import userStore from '@/modules/Store/UserStore.ts';
 
 export default class ExplorePage extends Page {
   readonly swiperSelector: string = '.exploreLastAddedSection__swiper';
@@ -31,6 +33,7 @@ export default class ExplorePage extends Page {
     return super.render({
       lastAddedRecipes: allRecipes.slice(0, 5),
       recipes: allRecipes,
+      isLoggedIn: userStore.isLoggedIn,
     });
   }
 

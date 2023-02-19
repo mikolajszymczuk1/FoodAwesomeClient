@@ -1,5 +1,7 @@
 // @ts-ignore
 import routerObj from '@/modules/Router/routerObj.ts';
+// @ts-ignore
+import userStore from '@/modules/Store/UserStore.ts';
 
 /* eslint-disable max-len */
 export default class Navigation {
@@ -13,24 +15,40 @@ export default class Navigation {
 
   readonly mainLinkTag: string = 'a';
 
+  readonly logoutButtonSelector: string = `${this.navigationElementSelector}__link--logout-button`;
+
   public navigationElement: HTMLElement;
 
   public activateButton: HTMLButtonElement;
 
   public deactivateButton: HTMLButtonElement;
 
-  constructor() {
+  public logoutButton: HTMLButtonElement;
+
+  init(): void {
+    // Get elements
     this.navigationElement = document.querySelector(this.navigationElementSelector) as HTMLElement;
     this.activateButton = this.navigationElement.querySelector(this.activateButtonSelector) as HTMLButtonElement;
     this.deactivateButton = this.navigationElement.querySelector(this.deactivateButtonSelector) as HTMLButtonElement;
-  }
 
-  init(): void {
+    if (userStore.isLoggedIn) {
+      this.logoutButton = this.navigationElement.querySelector(this.logoutButtonSelector) as HTMLButtonElement;
+    }
+
+    // Add events
     this.activateButton.addEventListener('click', () => this.activateMenu());
     this.deactivateButton.addEventListener('click', () => this.deactivateMenu());
 
     // Setup links
     this.setupLinks();
+
+    // Init logout event
+    if (userStore.isLoggedIn) {
+      this.logoutButton.addEventListener('click', () => {
+        userStore.logout();
+        routerObj.setPage(window.location.pathname);
+      });
+    }
   }
 
   /**
